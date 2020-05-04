@@ -1,5 +1,6 @@
 package com.zhoorta.android.pdf.signer
 
+import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -14,13 +15,12 @@ import android.widget.Button
 import android.widget.Toast
 import com.github.gcacace.signaturepad.views.SignaturePad
 import com.zhoorta.android.pdf.signer.pdftools.PDFTools
+import kotlinx.android.synthetic.main.activity_get_signature.*
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
 import java.io.OutputStream
 import java.util.*
-
-import kotlinx.android.synthetic.main.activity_get_signature.*
 
 class GetSignatureActivity : AppCompatActivity() {
 
@@ -58,7 +58,7 @@ class GetSignatureActivity : AppCompatActivity() {
 
         clear_button.setOnClickListener(View.OnClickListener { signature_pad.clear() })
         save_button.setOnClickListener(View.OnClickListener {
-            alert(resources.getString(R.string.info_saving_document))
+            Toast.makeText(this, resources.getString(R.string.info_saving_document), Toast.LENGTH_SHORT).show()
             val xpos = config!!.getString("xpos", "110").toInt()
             val ypos = config!!.getString("ypos", "170").toInt()
             val width = config!!.getString("width", "200").toInt()
@@ -68,11 +68,13 @@ class GetSignatureActivity : AppCompatActivity() {
             val signatureBitmap = signature_pad!!.getTransparentSignatureBitmap()
             val outputSignature = saveSignature(signatureBitmap)
 
-            //final File tmpLocalFile = new File(getIntent().getExtras().getString("file"));
-            val tmpLocalFile = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString() + "/Destino.pdf")
+            var  tmpOrigin : File =  File(getIntent().getExtras().getString("file"));
+            var tmpLocalFile = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString() + "/destino.pdf")
+
             //create the file
             try {
-                tmpLocalFile.createNewFile()
+                tmpOrigin.copyTo(tmpLocalFile, true, 4096)
+
             } catch (e: IOException) {
                 e.printStackTrace()
             }
@@ -137,18 +139,12 @@ class GetSignatureActivity : AppCompatActivity() {
 
 
                     }
-                }).execute(getApplicationContext());*/alertDialog!!.hide()
+                }).execute(getApplicationContext());*/
+            val intent = Intent(this@GetSignatureActivity, MainActivity::class.java)
+            startActivity(intent);
         })
     }
 
-    private fun alert(message: String) {
-        alertDialog = AlertDialog.Builder(this).create()
-        alertDialog!!.apply{
-            setTitle("Success");
-            setMessage(message)
-            show()
-        }
-    }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
         when (requestCode) {

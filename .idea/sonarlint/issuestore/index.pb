@@ -39,8 +39,6 @@ h
 +app/src/main/res/layout/activity_config.xml,7/9/79ded72fe6981a5dd5931ec5d562fa132d107bb3
 b
 2app/src/main/res/layout/activity_get_signature.xml,f/d/fd6d71856d63e74ce55669b99fefd72b695357e3
-Y
-)app/src/main/res/layout/activity_main.xml,7/6/76b07e40f24cce093536731477540f12e7da3cb6
 b
 2app/src/main/res/layout/activity_show_document.xml,b/a/bacd28735cf51c1fb642ead864abad2d9b8a32af
 h
@@ -227,3 +225,5 @@ A
 build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
 9
 	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+K
+.gradle/5.6.4/gc.properties,8/8/889bf09669453649662bd520db72060dd961b6d8

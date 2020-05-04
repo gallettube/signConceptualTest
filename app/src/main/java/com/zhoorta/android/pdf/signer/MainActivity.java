@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     private EditText editSearch;
     private SharedPreferences config;
 
+    private String nombre;
+
     private boolean checkConfig() {
         config = getSharedPreferences("SignerConfig", 0);
 
@@ -87,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
 
         buttonSearch = findViewById(R.id.buttonSearch);
         editSearch = findViewById(R.id.editSearch);
+        nombre = editSearch.getText().toString();
 
         //if(checkConfig()) connect() else openConfigActivity();
 
@@ -94,8 +97,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ShowDocumentActivity.class);
                 // Origen SDcard/artefactos
-                intent.putExtra("source",Environment.getExternalStoragePublicDirectory(android.os.Environment.DIRECTORY_DOWNLOADS)+"/artefactos.pdf");
-                intent.putExtra("file", Environment.getExternalStoragePublicDirectory(android.os.Environment.DIRECTORY_DOWNLOADS)+"/artefactos.pdf");
+                intent.putExtra("source",Environment.getExternalStoragePublicDirectory(android.os.Environment.DIRECTORY_DOWNLOADS)+"/"+nombre);
+                intent.putExtra("file", Environment.getExternalStoragePublicDirectory(android.os.Environment.DIRECTORY_DOWNLOADS)+"/"+nombre);
                 startActivity(intent);
                 /*
                 new SMBServerConnect(new SMBServerConnect.AsyncResponse(){
