@@ -89,14 +89,15 @@ public class MainActivity extends AppCompatActivity {
 
         buttonSearch = findViewById(R.id.buttonSearch);
         editSearch = findViewById(R.id.editSearch);
-        nombre = editSearch.getText().toString();
 
         //if(checkConfig()) connect() else openConfigActivity();
 
         buttonSearch.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ShowDocumentActivity.class);
-                // Origen SDcard/artefactos
+                // Origen sd
+
+                nombre = editSearch.getText().toString();
                 intent.putExtra("source",Environment.getExternalStoragePublicDirectory(android.os.Environment.DIRECTORY_DOWNLOADS)+"/"+nombre);
                 intent.putExtra("file", Environment.getExternalStoragePublicDirectory(android.os.Environment.DIRECTORY_DOWNLOADS)+"/"+nombre);
                 startActivity(intent);
