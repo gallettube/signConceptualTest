@@ -1,0 +1,8 @@
+
+H
+java:S1128"3Remove this unused import 'android.content.Intent'.(³ð‹G
+>
+java:S1172&"(Remove this unused method parameter "v".(¡é††
+d
+java:S4042'"IUse "java.nio.Files#delete" here for better messages on error conditions.(óÈœèÿÿÿÿÿ
+U	java:S899'";Do something with the "boolean" value returned by "delete".(óÈœèÿÿÿÿÿ

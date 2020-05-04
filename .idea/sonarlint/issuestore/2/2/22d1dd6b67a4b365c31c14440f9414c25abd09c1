@@ -1,0 +1,28 @@
+
+f
+java:S1301K"KReplace this "switch" statement by "if" statements to increase readability.(øå´¡ÿÿÿÿÿ
+q
+java:S1450"[Remove the "buttonSearch" field and declare it as a local variable in the relevant methods.(ñè¬”
+p
+java:S1450"URemove the "config" field and declare it as a local variable in the relevant methods.(ïÅÛÌşÿÿÿÿ
+t
+java:S1450"YRemove the "editSearch" field and declare it as a local variable in the relevant methods.(‰å”±ûÿÿÿÿ
+W
+java:S1126"AReplace this if-then-else statement by a single return statement.(ß¸ÂÅ
+<	java:S131K""Add a default case to this switch.(øå´¡ÿÿÿÿÿ
+>
+java:S1172^"(Remove this unused method parameter "v".(¡é††
+C
+java:S1172",Remove this unused method parameter "which".(¦Œœ¢
+I
+java:S1068".Remove this unused "editSearch" private field.(‰å”±ûÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(ˆİá…ûÿÿÿÿ
+V	java:S125""<This block of commented-out lines of code should be removed.(Úö”èüÿÿÿÿ
+V	java:S125*"<This block of commented-out lines of code should be removed.(ÓÏÑüÿÿÿÿ
+Q	java:S1255"<This block of commented-out lines of code should be removed.(äÒÊÌ
+Q	java:S125["<This block of commented-out lines of code should be removed.(Ãèö
+Q	java:S125e"<This block of commented-out lines of code should be removed.(ÁóÍô
+F
+java:S1144"0Remove this unused private "checkConfig" method.(¤¶Úß
+A
+java:S1144‡"*Remove this unused private "alert" method.(û±êŒ
